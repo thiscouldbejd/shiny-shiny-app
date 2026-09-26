@@ -1,0 +1,76 @@
+body {
+  font-family: $font-normal, $font-family-base !important;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4.dropdown-heading, h5.dropdown-heading, h6.dropdown-heading, .navbar-brand, a.navbar-brand  {
+	letter-spacing: $font-spacing-heading;
+	font-family: $font-heading, $font-family-base !important;
+	font-weight: $font-weight-heading;
+	em {
+		color: lighten($colour-highlight, 5%) !important;
+		font-style: normal;
+		font-weight: $font-weight;
+	}
+	strong {
+		color: darken($colour-highlight, 20%) !important;
+		font-style: normal;
+	}
+	.brand-highlight {
+		color: $colour-general !important;
+		font-weight: bold;
+		font-size: 92%;
+	}
+}
+
+h1, h2, h3, .navbar-brand, a.navbar-brand, .text-highlight  {
+	color: $colour-highlight !important;
+}
+
+h4.dropdown-heading, h5.dropdown-heading, h6.dropdown-heading {
+	color: lighten($colour-highlight, 25%) !important;
+}
+
+a.navbar-brand  {
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	&:hover {color: darken($colour-highlight, 20%) !important;}
+}
+
+em.kb-shortcut {
+	white-space: nowrap !important;
+	font-size: 90%;
+	font-style: normal;
+	text-transform: uppercase;
+	border-radius: 0.2rem;
+	padding: 0 0.2rem;
+	margin: 0 0.1rem;
+	background-color: $colour-general;
+	color: $colour-background;
+	font-weight: $font-weight-heading;
+	letter-spacing: 1px;
+}
+
+// -- Font Sizes -- //
+$larger-sizes: ("300": 300%, "200": 200%, "150": 150%, "125": 125%, "110": 110%, "105": 105%);
+
+$smaller-sizes: ("90": 90%, "80": 80%, "70": 70%, "60": 60%, "50": 50%, "40": 40%, "30": 30%, "20": 20%, "10": 10%);
+
+@each $name, $size in $smaller-sizes {
+  .font-smaller-#{$name} {
+    font-size: $size !important;
+  }
+  .line-height-smaller-#{$name} {
+    line-height: $size !important;
+  }
+}
+
+@each $name, $size in $larger-sizes {
+  .font-larger-#{$name} {
+    font-size: $size !important;
+  }
+  .line-height-larger-#{$name} {
+    line-height: $size !important;
+  }
+}
+// -- Font Sizes -- //

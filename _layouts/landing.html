@@ -1,0 +1,29 @@
+---
+layout: compress.base
+css:
+  - bootstrap/bootstrap
+  - custom/mixins/transitions
+  - custom/mixins/transforms
+  - custom/mixins/gradients
+  - custom/mixins/box-shadows
+  - custom/variables
+  - custom/common
+  - custom/fonts
+  - custom/icons
+  - custom/landing
+imports:
+- name: rellax
+  load: defer
+scripts:
+  - apps/landing
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb">
+	{% include head.html %}
+	<body>
+    <div id="pages" class="container-fluid pages p-0">
+      {{ content }}
+    </div>
+		{% include footer.html type="page" %}		
+  </body>
+</html>

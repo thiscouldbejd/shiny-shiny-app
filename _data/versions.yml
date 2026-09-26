@@ -1,0 +1,31 @@
+###############################################
+#                                             #
+#   __      __           _                    #
+#   \ \    / /          (_)                   #
+#    \ \  / /__ _ __ ___ _  ___  _ __  ___    #
+#     \ \/ / _ \ '__/ __| |/ _ \| '_ \/ __|   #
+#      \  /  __/ |  \__ \ | (_) | | | \__ \   #
+#       \/ \___|_|  |___/_|\___/|_| |_|___/   #
+#                                             #
+###############################################
+
+app :
+  1.0.0 :
+    name : App v1.0.0
+    desc : Initial Version (from Chrome App)
+    numeric : 1.0.0.0
+    link : /1.0.0/#
+    type:
+      - beta
+    changes :
+      - Maths Support (Latex / AsciiMath)
+site :
+  0.8.2 :
+    name : Site v0.8.2
+    desc : Initial Version (from Chrome App)
+    numeric : 0.8.2.0
+    type:
+      - alpha
+    changes :
+      - Profiling Framework
+      - Updated Performance Tests

@@ -1,0 +1,13 @@
+{% assign css = false %}{% if page and page.css %}{% assign css = page.css %}{% elsif layout and layout.css %}{% assign css = layout.css %}{% endif %}<head>
+
+	{% include meta.html %}
+
+	<title>{% if page.title and page.title != 'Home' %} {{ page.title }} | {{ site.title }} {% else %} {{ site.title }} {% endif %}</title>
+
+	{% include icons.html %}
+	
+	{% include scripts.html %}
+	
+  {% include styles.html imports=css %}
+
+</head>

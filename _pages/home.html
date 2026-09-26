@@ -1,0 +1,32 @@
+---
+layout: landing
+title: Home
+permalink: /
+includes: ["Introduction", "Configuration", "Management", "Versions"]
+---
+{% capture logo %}{% include logo.md %}{% endcapture %}
+
+<div id="page-1" class="container-fluid p-0 page page-lead vh-75 vh-lg-100">
+  <div id="home" class="d-flex align-items-center justify-content-center h-100 w-100 content">
+    {{ logo | markdownify }}
+  </div>
+  <nav>
+    <ul class="nav d-none d-lg-block position-fixed flex-column">
+      <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+      {% for file in page.includes %}
+      <li class="nav-item"><a class="nav-link" href="#{{ file | downcase }}">{{ file }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
+
+{% for file in page.includes %}
+<div id="page-{{ forloop.index | plus: 1 }}" class="container-fluid p-2 p-md-0 page page-content">
+  <div class="content container p-3 h-100 my-lg-2 mvw-lg-75">
+    <h2 id="{{ file | downcase }}" class="display-4 title title-{{ forloop.index }} anchor position-relative colour-{{ forloop.index }}">{{ file }}</h2>
+    <div class="m-0 p-1 mt-2 mt-lg-4">
+      {% include content/{{ file | downcase }}.html %}
+    </div>
+  </div>
+</div>
+{% endfor %}

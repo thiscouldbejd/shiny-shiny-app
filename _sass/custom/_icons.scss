@@ -1,0 +1,13 @@
+.icon {
+  width: 4em;
+  height: 4em;
+  svg {
+    path, polygon, rect {
+  		fill: $icon-background;
+		}
+    circle {
+  		stroke: $icon-background;
+  		stroke-width: 1;
+		}
+  }
+}

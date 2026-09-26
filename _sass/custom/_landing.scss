@@ -1,0 +1,237 @@
+body {
+  margin: 0;
+  background: $colour-background;
+  flex-direction: column;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  scroll-behavior: smooth;
+}
+
+.nav {
+  background-color: rgba($colour-background,0.4);
+  border-radius: 5px;
+  @include box-shadow(0 6px 12px 0 rgba(23,28,33,.06));
+  min-width: 108px;
+  a.nav-link {
+    
+    &:focus {
+      font-weight: bold;
+    } 
+  }
+}
+.anchor {
+  padding-top: $anchor-offset;
+  margin-top: -$anchor-offset;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.h1, h2, h3 {
+  @include text-shadow(0.1rem 0.1rem 0.1rem rgba(0,0,0,0.5));
+}
+
+.title {
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: calc(#{$anchor-offset} + #{$display4-size} + 14px);
+    left: 0;
+    height: 5px;
+    background-color: $colour-title-bar;
+  }
+  &.title-1::before {width: 12rem;}
+  &.title-2::before {width: 18rem;}
+  &.title-3::before {width: 14rem;}
+  &.title-4::before {width: 8rem;}
+}
+
+.nav {
+  z-index: 100;
+  right: 1em;
+  top: 6em;
+}
+
+.pages {
+  scroll-behavior: smooth;
+  background-color: #fcfcfc;
+}
+
+.page {
+  width: 100vw;
+}
+
+.page-content {
+  position: relative;
+	.content {
+    background-color: rgba($colour-background,0.5);
+  	border-radius: 5px;
+    @include box-shadow(0 6px 12px 0 rgba(23,28,33,.06));
+  }
+  min-height: 100vh;
+}
+
+.page-content, .content, .content svg, .content h2, .content p, .content * {z-index: 10;}
+
+.d {
+  &:before {
+	  content: ' ';
+	  position: fixed;
+  }
+  .s {
+    will-change: transform;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    &:first-child {
+      left: 1em;
+      height: 80vh;
+      z-index: 1;
+    }
+    &:nth-child(2) {
+      left: 15vw;
+      max-width: 15vw;
+      min-height: 100vh;
+      z-index: 2;
+    }
+    &:nth-child(3) {
+      left: 20vw;
+      max-width: 20vw;
+      min-height: 100vh;
+      z-index: 3;
+    }
+    &:nth-child(4) {
+      height: 50vh;
+      right: 10vw;
+      z-index: 2;
+    }
+    &:nth-child(5) {
+      top: 0;
+      right: 7vw;
+      z-index: 1;
+    }
+    &:nth-child(6) {
+      top: 110vh;
+      right: 30vw;
+      z-index: 3;
+    }
+    &:nth-child(7) {
+      top: 190vh;
+      left: 30vw;
+      z-index: 1;
+    }
+    &:nth-child(8) {
+      top: 140vh;
+      left: 50vw;
+      min-height: 120vh;
+      z-index: 1;
+    }
+    &:nth-child(9) {
+      top: 180vh;
+      left: 60vw;
+      z-index: 2;
+    }
+    &:nth-child(10) {
+      top: 220vh;
+      left: 40vw;
+      max-height: 60vh;
+      z-index: 1;
+    }
+    &:nth-child(9) {
+      top: 310vh;
+      left: 70vw;
+      z-index: 2;
+    }
+  }
+}
+
+#page-1 .b {
+  grid-template-rows: 200px 200px 200px 200px 200px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  .l {&:nth-child(2), &:nth-child(4) {grid-column-end: -1 !important;}}
+}
+
+.b, .b span {z-index: -1;}
+.b {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  top: 0;
+  grid-template-areas: none;
+  grid-auto-flow: initial;
+  grid-auto-rows: initial;
+  grid-auto-columns: initial;
+  -webkit-transform-origin: 0;
+  transform-origin: 0;
+  &.dark {
+    @include complex_LinearGradient(to bottom, $bg-dark lighten($bg-dark,10%) lighten($bg-dark,25%) lighten($bg-dark,45%) lighten($bg-dark,70%), 0% 10% 38% 58% 92%);
+  }
+  &.uphill {
+    @include skew(0, -18);
+  }
+  &.downhill {
+    @include skew(0, 24);
+  }
+  
+  .l:first-child {
+    grid-column: span 3;
+  }
+  .l:first-child, .l:nth-child(2) {
+    grid-column-start: span 3;
+  }
+  .l:nth-child(3), .l:nth-child(4) {
+    grid-column-start: span 5;
+  }
+  .l:nth-child(5) {
+    grid-column-start: span 10;
+  }
+  .l:first-child, .l:nth-child(3), .l:nth-child(5)  {
+  	grid-column-end: auto;
+  }
+  
+  .l:nth-child(2) {
+    grid-row-start: 3;
+  }
+  .l:nth-child(3), .l:nth-child(4) {
+    grid-row-start: 4;
+  }
+  .l:nth-child(5) {
+    grid-row-start: 5;
+  }
+  .l:nth-child(2), .l:nth-child(3), .l:nth-child(4), .l:nth-child(5) {
+  	grid-row-end: auto;
+  }
+  
+  .l:first-child {
+    &.light {@include complex_LinearGradient(100grad,rgba($bg-stripe-1, 0.1) rgba($bg-stripe-1, 0.05) rgba($bg-stripe-1, 0),0% 20% 100%);}
+    &.dark {@include complex_LinearGradient(100grad,rgba($bg-stripe-1, 0.4) rgba($bg-stripe-1, 0.15) rgba($bg-stripe-1, 0),0% 20% 100%);}
+  }
+  .l:nth-child(2) {
+    &.light {@include complex_LinearGradient(100grad,rgba($bg-stripe-2,0) rgba($bg-stripe-2,0.05) rgba($bg-stripe-2,0.1),0% 40% 100%);}
+    &.dark {@include complex_LinearGradient(100grad,rgba($bg-stripe-2,0) rgba($bg-stripe-2,0.05) rgba($bg-stripe-2,0.35),0% 40% 100%);}
+  }
+  .l:nth-child(3) {
+    @include complex_LinearGradient(100grad, $bg-stripe-3 rgba($bg-stripe-3,0),50% 100%);
+  }
+  .l:nth-child(4) {
+    @include complex_LinearGradient(100grad,rgba($bg-stripe-4,0) rgba($bg-stripe-4,0.05),10% 100%);
+  }
+  .l:nth-child(5) {
+    @include complex_LinearGradient(0grad,rgba($bg-stripe-5,0) rgba($bg-stripe-5,0.05),40% 100%);
+  }
+}
+
+@each $index, $value in $colour-variants {
+  h1.colour-#{$index}, h2.colour-#{$index}, h3.colour-#{$index}, h4.colour-#{$index}, h5.colour-#{$index}, h6.colour-#{$index} {
+    color: darken($value, 5%) !important;
+  }
+  .title.colour-#{$index}:before {
+    background-color: $value !important;
+  }
+}
