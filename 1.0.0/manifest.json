@@ -1,0 +1,68 @@
+{
+	"id" : "shinyshiny.app/1.0.0",
+	"name" : "Shiny! Shiny!",
+	"short_name" : "Shiny",
+	"description" : "Simple, secure & focussed text editing … ideal for distraction-free writing, tests & exams",
+	"version" : "1.0.0",
+	"author" : "thiscouldbejd",
+	"categories": ["productivity", "utilities", "education"],
+	"default_locale" : "en",
+	"manifest_version" : 2,
+	"start_url" : "/1.0.0",
+	"scope" : "/",
+	"display_override": ["fullscreen", "minimal-ui"],
+  "display": "standalone",
+	"icons" : [
+		{
+			"src": "img/icons/icon_16x16.png",
+			"sizes": "16x16",
+			"type": "image/png"
+		},
+		{
+			"src": "img/icons/icon_48x48.png",
+			"sizes": "48x48",
+			"type": "image/png"
+		},
+		{
+			"src": "img/icons/icon_128x128.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		}
+	],
+	"offline_enabled" : true,
+	"kiosk_enabled" : true,
+	"permissions" : [
+		{
+			"fileSystem" : [
+				"write", 
+				"directory"
+			]
+		},
+		"system.network",
+		"storage",
+    "power"
+	],
+  "storage" : {
+		"managed_schema" : "schema.json"
+	},
+	"file_handlers" : [
+    {
+      "action" : "/1.0.0/",
+      "accept" : {
+        "text/plain" : [".txt"],
+				"text/markdown" : [".md"]
+      },
+			"client_mode" : ["navigate-existing"],
+			"launch_type": "single-client"
+    }
+  ],
+	"launch_handler": {
+    "client_mode": "focus-existing"
+  },
+	"cross_origin_opener_policy" : {
+		"value" : "unsafe-none"
+	},
+	"cross_origin_embedder_policy" : {
+		"value" : "unsafe-none"
+	}
+}

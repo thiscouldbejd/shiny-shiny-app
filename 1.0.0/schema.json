@@ -1,0 +1,192 @@
+{
+	"type": "object",
+	"properties": {
+    "DEBUG": {
+      "title": "Debug Mode",
+      "description": "Log Configuration and Debugging Messages to the Javascript Console",
+      "type": "boolean",
+      "default": false
+    },
+    "SAVE_RECOVERY": {
+      "title": "Recovery Save",
+      "description": "Automatically save out recovery document on normal app close",
+      "type": "boolean",
+      "default": false
+    },
+    "SAVE_AUTOSAVE": {
+      "title": "Autosave",
+      "description": "Time between autosaves once document has first been saved, 0 = No Autosave",
+      "type": "integer",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 60
+    },
+    "PRINT_EQUATIONS": {
+      "title": "Print Equations",
+      "description": "Whether Maths Equations (Latex & AsciiMaths) are rendered for printing",
+      "type": "boolean",
+      "default": false
+    },
+    "PRINT_FONT_FAMILY": {
+      "title": "Print Font Family",
+      "description": "Sets the default print font family, initially set to default (Roboto)",
+      "type": "string",
+      "default": "default"
+    },
+    "PRINT_FONT_SIZE": {
+      "title": "Print Font Size",
+      "description": "Sets the default print font size, initially set to 12pt to comply with UK Exam Requirements",
+      "type": "integer",
+      "default": 12,
+    	"minimum": 6,
+    	"maximum": 32
+    },
+    "PRINT_LINE_BREAKS": {
+      "title": "Print Line Breaks",
+      "description": "Whether line breaks are handled 'simply', by converting each line into a paragraph",
+      "type": "boolean",
+      "default": false
+    },
+    "PRINT_LINE_HEIGHT": {
+      "title": "Print Line Height",
+      "description": "Sets the default print line height, initially set to double line spacing to comply with UK Exam Requirements",
+      "type": "integer",
+      "default": 2,
+      "minimum": 1,
+      "maximum": 5
+    },
+    "PRINT_HEADER_LINE_HEIGHT": {
+      "title": "Print Header Line Height",
+      "description": "Line height for optional candidate page header",
+      "type": "number",
+      "default": 1.2
+    },
+		"PRINT_GUTTER_TOP": {
+      "title": "Print Gutter (Top)",
+      "description": "Specified in mm, and only applied to the top of the content, e.g. once per document",
+      "type": "integer",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 100
+    },
+    "PRINT_GUTTER_RIGHT": {
+      "title": "Print Gutter (Right)",
+      "description": "Specified as a % of the page width, this is applied to the content on every page",
+      "type": "integer",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 100
+    },
+    "PRINT_GUTTER_BOTTOM": {
+      "title": "Print Gutter (Bottom)",
+      "description": "Specified in mm, and only applied to the bottom of the content, e.g. once per document",
+      "type": "integer",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 100
+    },
+    "PRINT_GUTTER_LEFT": {
+      "title": "Print Gutter (Left)",
+      "description": "Specified as a % of the page width, this is applied to the content on every page",
+      "type": "integer",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 100
+    },
+    "PRINT_MODE_EMBEDDED": {
+      "title": "Embedded Print Mode",
+      "description": "Set to true, this will enabled embedded print mode, otherwise iframe print mode is used",
+      "type": "boolean",
+      "default": null
+    },
+    "CUSTOM_TEMPLATES": {
+      "title": "List of Custom Templates",
+      "description": "Custom Markdown Templates that can be added",
+      "type": "array",
+      "default": false,
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "title": "Title of the Template",
+            "type": "string"
+          },
+          "template": {
+            "title": "Template Body (Markdown)",
+            "type": "string"
+          },
+          "default": {
+            "title": "Insert (by default) in each new Document",
+            "type": "boolean",
+            "default": false
+          },
+          "top": {
+            "title": "Insert at the top of the Document",
+            "type": "boolean",
+            "default": true
+          }
+        }
+      }
+    },
+    "AUTOCORRECT": {
+      "title": "Enable OS / Browser Autocorrect in the Context Menu",
+      "description": "Enables the OS / Browser Autocorrect Context Menu (e.g. Right Click on a misspelled word - requires SPELLCHECK to be set to true). If this is explicitly set to false, this will disable the right click context menu.",
+      "type": "boolean",
+      "default": null
+    },
+    "SPELLCHECK": {
+      "title": "Enable OS / Browser Spellcheck",
+      "description": "Enables the OS / Browser Spellcheck Options (e.g. Underlines misspelled word).  If this is explicitly set to false, this will disable the right click context menu.",
+      "type": "boolean",
+      "default": null
+    },
+    "HIGHLIGHT_MISTAKES": {
+      "title": "Highlights Mistakes with Custom Spellcheck",
+      "description": "Enables the custom Typo Spellchecker to highlight (red underlining) errors and mistakes when using the app",
+      "type": "boolean",
+      "default": false
+    },
+    "SUGGEST_CORRECTIONS": {
+      "title": "Suggest Custom Spellcheck Corrections",
+      "description": "Enables a simple overlay which suggests alternative spelling when mistakes are highlighted (requires HIGHLIGHT_MISTAKES to be set to true)",
+      "type": "boolean",
+      "default": false
+    },
+    "CONTEXTUAL_CORRECTIONS": {
+      "title": "Suggest Custom Spellcheck Corrections",
+      "description": "Enables a custom Context menu which suggests alternative spelling when mistakes are highlighted (requires HIGHLIGHT_MISTAKES to be set to true)",
+      "type": "boolean",
+      "default": false
+    },
+    "DICTIONARY_LANGUAGE": {
+      "title": "Custom Spellcheck Dictionary Language Locale",
+      "description": "Current options are 'en_AU', 'en_CA', 'en_US' and 'en_GB' (which is the default)",
+      "type": "string",
+      "default": "en_GB"
+    },
+    "SERVICE_ADDRESS": {
+      "title": "Service Address for Monitoring",
+      "description": "",
+      "type": "string",
+      "default": ""
+    },
+    "SERVICE_ALGORITHM": {
+      "title": "Service Algorithm for Monitoring",
+      "description": "",
+      "type": "string",
+      "default": ""
+    },
+    "SERVICE_KEY": {
+      "title": "Service Key for Monitoring",
+      "description": "",
+      "type": "string",
+      "default": ""
+    },
+    "SERVICE_MONITORING": {
+      "title": "Enable Monitoring Service",
+      "description": "",
+      "type": "boolean",
+      "default": ""
+    }
+	}
+}
